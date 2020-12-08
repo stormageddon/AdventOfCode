@@ -1,0 +1,3 @@
+iyr:2019
+hcl:#123abz eyr:1967 hgt:1decm
+ecl:grn pid:012533040 byr:2003
