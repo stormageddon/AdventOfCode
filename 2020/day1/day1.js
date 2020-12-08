@@ -1,4 +1,3 @@
-// const fs = require('fs').promises;
 import {promises as fs} from 'fs';
 
 async function getData() {
@@ -16,10 +15,3 @@ while (entries.length > 0) {
         });
     });
 }
-
-
-function sumThree(num1, num2, num3) {
-    return num1 + num2 + num3
-}
-
-// 259716

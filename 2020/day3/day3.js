@@ -22,10 +22,8 @@ slopes.forEach((slope) => {
         xPos += slope.xDelta
         if (xPos >= numCols) xPos = xPos % numCols
         yPos += slope.yDelta
-        // console.log(`${yPos},${xPos},${map[yPos][xPos]}`)
         if (map[yPos][xPos] == '#') {
             numCollisions += 1
-            // console.log('increase')
         }
         
     } while(yPos < numRows)

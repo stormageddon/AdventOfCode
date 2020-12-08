@@ -6,9 +6,7 @@ async function getData() {
 }
 
 const passports = await getData();
-// console.log(passports)
 let formattedPassportData = getFormattedPassportData(passports)
-// console.log(formattedPassportData)
 const numValid = formattedPassportData.reduce((numValid, passportData) => {
     return isValid(passportData) ? numValid + 1 : numValid
 }, 0)
@@ -16,27 +14,6 @@ const numValid = formattedPassportData.reduce((numValid, passportData) => {
 console.log('num valid: ' + numValid)
 
 function isValid(passport) {
-    // if (!validateHeight(passport)) {
-    //     console.log(`${passport} has invalid height`)
-    // }
-    // if (!validateBirthYear(passport)) {
-    //     console.log(`${passport} has invalid birth year`)
-    // }
-    // if (!validateExpirationYear(passport)) {
-    //     console.log(`${passport} has invalid expiration year`)
-    // }
-    // if (!validateHairColor(passport)) {
-    //     console.log(`${passport} has invalid hair color`)
-    // }
-    // if (!validatePassportId(passport)) {
-    //     console.log(`${passport} has invalid passport id`)
-    // }
-    // if (!validateIssueYear(passport)) {
-    //     console.log(`${passport} has invalid issue year`)
-    // }
-    // if (!validateEyeColor(passport)) {
-    //     console.log(`${passport} has invalid eye color`)
-    // }
     return validateHeight(passport)
     && validateBirthYear(passport)
     && validateExpirationYear(passport)
@@ -44,9 +21,6 @@ function isValid(passport) {
     && validatePassportId(passport)
     && validateIssueYear(passport)
     && validateEyeColor(passport)
-
-    // console.log(`${passport} -> ${res}`)
-    // return res
 }
 
 function validateEyeColor(passport) {
@@ -65,7 +39,6 @@ function validateIssueYear(passport) {
 function validatePassportId(passport) {
     const pid = getElem("pid", passport)
     if (!pid) return false
-    if (pid.length > 9) console.log(passport)
     const regex = RegExp('^[0-9]{9}$')
     return regex.test(pid)
 }

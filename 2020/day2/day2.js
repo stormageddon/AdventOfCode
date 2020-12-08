@@ -6,12 +6,6 @@ async function getData() {
 }
 
 const passwords = await getData();
-// let numInvalidPassword = passwords.reduce((accumulator, currValue) => {
-//     console.log(accumulator);
-//     return accumulator + 1
-// }, 0);
-
-
 
 let numInvalidPassword = passwords.reduce((numInvalid, currPassword) => {
     let x = currPassword.split(":")[0]
@@ -25,9 +19,6 @@ let numInvalidPassword = passwords.reduce((numInvalid, currPassword) => {
     password.split("").forEach((char) => {
         !charMap[char] ? charMap[char] = 1 : charMap[char] += 1
     });
-    // let l = parseInt(charMap[letterToCheck])
-    
-    // console.log(`Checking ${currPassword} for ${letterToCheck} between ${minNum} and ${maxNum} => ${isValid(minNum, maxNum, l)}`)
 
     if (isValid(pos1, pos2, letterToCheck, password)) {
         return numInvalid + 1
@@ -38,11 +29,6 @@ let numInvalidPassword = passwords.reduce((numInvalid, currPassword) => {
 }, 0);
 
 console.log(`${numInvalidPassword} were invalid`)
-
-// function isValid(min, max, num) {
-//     console.log(`min: ${min}, max: ${max}, num: ${num}, valid: ${num >= min && num <= max}`)
-//     return num >= min && num <= max;
-// }
 
 function isValid(pos1, pos2, letter, passwordStr) {
     console.log(`pos1: ${pos1}, pos2: ${pos2}, letter: ${letter}, passwordStr: ${passwordStr}`)
