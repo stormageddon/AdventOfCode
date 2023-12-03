@@ -1,0 +1,10 @@
+import {promises as fs} from 'fs';
+
+async function getData() {
+    const data = await fs.readFile('input_small.txt', 'utf-8');
+    return data.toString().split('\n');
+}
+
+const entries = await getData();
+
+entries.forEach(e => console.log(e))
